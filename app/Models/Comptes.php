@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Comptes extends Model
 {
     use HasFactory;
-    protected $fillable = ['idcompte','login','pwd','email','telcompte','tokencompte','is_connected','is_valid'];
+    protected $fillable = ['idcompte','login','pwd','role','email','telcompte','tokencompte','is_connected','is_valid'];
     protected $hidden = [];
+
 
     public function Organisateurs()
     {

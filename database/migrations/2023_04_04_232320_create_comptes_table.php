@@ -17,6 +17,7 @@ class CreateComptesTable extends Migration
             $table->id('idcompte');
             $table->string('login');
             $table->string('pwd');
+            $table->string('role');
             $table->string('email')->unique();
             $table->string('telcompte');
             $table->string('tokencompte', 128)->unique();
@@ -24,9 +25,7 @@ class CreateComptesTable extends Migration
             $table->boolean('is_valid')->default(0);
             $table->timestamps();
         });
-        
     }
-
     /**
      * Reverse the migrations.
      *

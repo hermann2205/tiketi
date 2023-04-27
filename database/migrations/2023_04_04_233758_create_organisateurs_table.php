@@ -14,13 +14,13 @@ class CreateOrganisateursTable extends Migration
     public function up()
     {
         Schema::create('organisateurs', function (Blueprint $table) {
-            $table->id('idorganis');
-            $table->string('nom_organis');
-            $table->string('postnom_organis');
-            $table->string('pseudo_organis');
-            $table->string('photo_organis');
-            $table->text('descript_organis');
-            $table->string('carteid_organis');
+            $table->id('idOrganisateur');
+            $table->string('nomOrganisateur');
+            $table->string('postnomOrganisateur');
+            $table->string('pseudoOrganisateur');
+            $table->string('pictOrganisateur');
+            $table->text('descOrganisateur');
+            $table->string('tokenOrganisateur');
             $table->Integer('compte_idCompte_organis')->foreign('compte_idCompte_organis')->references('idcompte')->on('comptes');
             $table->timestamps();
         });

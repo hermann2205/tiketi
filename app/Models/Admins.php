@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Admins extends Model
 {
     use HasFactory;
-    protected $fillable = ['idadmin','nomadmin','pseudoadmin','pictadmin','compte_idCompte'];
+    protected $fillable = ['idadmins'  ,'nomadmins','pseudoadmins','pictadmins','tokenadmins','compte_idCompte'];
     protected $hidden = [];
 
     public function Comptes()

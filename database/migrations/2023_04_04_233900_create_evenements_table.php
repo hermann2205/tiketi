@@ -14,14 +14,14 @@ class CreateEvenementsTable extends Migration
     public function up()
     {
         Schema::create('evenements', function (Blueprint $table) {
-            $table->id('idevent');
-            $table->string('nom_event');
-            $table->text('descript_event');
-            $table->integer('nbr_places');
-            $table->string('token_evenem',94)->unique();
-            $table->integer('organis_ev')->foreign('organis_ev')->references('idorganis')->on('organisateurs');
-            $table->integer('typeEv_idtypeEv')->foreign('typeEv_idtypeEv')->references('idtypecat_ev')->on('type_events');
-            $table->integer('endroitev_idEndroitEv')->foreign('endroitev_idEndroitEv')->references('idendroit_ev')->on('endroit_evs');
+            $table->id('idEvenement');
+            $table->string('nomidEvenement');
+            $table->text('descidEvenement');
+            $table->integer('nbrplaceidEvenement');
+            $table->string('tokenidEvenement',94)->unique();
+            $table->dateTime("heureDebutEvenement");
+            $table->integer('organis_ev')->foreign('organis_ev')->references('idOrganisateur')->on('organisateurs');
+            $table->integer('categ_idcateg_ev')->foreign('categ_idcateg_ev')->references('idCategEvenements')->on('categ_events');
             $table->timestamps();
         });
     }

@@ -19,24 +19,26 @@ class EvenementsFactory extends Factory
     public function definition()
     {
         return [
-            "nom_event" => $this->faker->firstName(),
-            "descript_event" => $this->faker->text(300),
-            "nbr_places" => $this->faker->numberBetween(1,1000),
-            "token_evenem" => $this->faker->password(73,89),
-            "organis_ev" =>Organisateurs::all()->random()->idorganis,
-            "typeEv_idtypeEv" => TypeEvents::all()->random()->idtypecat_ev,
-            "endroitev_idEndroitEv" => EndroitEv::all()->random()->idendroit_ev
+            "nomidEvenement" => $this->faker->firstName(),
+            "descidEvenement" => $this->faker->text(300),
+            "nbrplaceidEvenement" => $this->faker->numberBetween(1,1000),
+            "tokenidEvenement" => $this->faker->password(73,89),
+            "heureDebutEvenement" => $this->faker->dateTime(),
+            "organis_ev" =>Organisateurs::all()->random()->idOrganisateur,
+            "categ_idcateg_ev" => CategEvents::all()->random()->idCategEvenements,
         ];
     }
 }
 
 /*
      $table->id('idevent');
-            $table->string('nom_event');
-            $table->text('descript_event');
-            $table->integer('nbr_places');
-            $table->string('token_evenem',94)->unique();
-            $table->integer('typeEv_idtypeEv')->foreign('typeEv_idtypeEv')->references('idtypecat_ev')->on('types_events');
-            $table->integer('endroitev_idEndroitEv')->foreign('endroitev_idEndroitEv')->references('idendroit_ev')->on('modelprods');
-            $table->timestamps();
+            $table->id('idEvenement');
+            $table->string('nomidEvenement');
+            $table->text('descidEvenement');
+            $table->integer('nbrplaceidEvenement');
+            $table->string('tokenidEvenement',94)->unique();
+            $table->dateTime("heureDebutEvenement");
+            $table->integer('organis_ev')->foreign('organis_ev')->references('idOrganisateur')->on('organisateurs');
+            $table->integer('categ_idcateg_ev')->foreign('categ_idcateg_ev')->references('idCategEvenements')->on('categ_events');
+
  */

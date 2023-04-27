@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Modelprod;
+use App\Models\Places;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BilletsFactory extends Factory
@@ -15,19 +16,17 @@ class BilletsFactory extends Factory
     public function definition()
     {
         return [
-            "nombillet"=>$this->faker->firstName(),
-            "descriplace" => $this->faker->text(200),
-            "token_billet" => $this->faker->password(60,85),
-            "model_idModel" => Modelprod::all()->random()->idmodelprods
+            "nomBillet"=>$this->faker->firstName(),
+            "tokenBillet" => $this->faker->password(60,85),
+            "place_idPlace" => Places::all()->random()->idPlace
         ];
     }
 }
 
 /*
-    $table->id("idbillet");
-            $table->string('nombillet');
-            $table->string('descriplace');
-            $table->string('token_billet',89)->unique();
-            $table->integer('model_idModel')->foreign('model_idModel')->references('idmodelprods')->on('modelprods');
+    $table->id("idBillet");
+            $table->string('nomBillet');
+            $table->string('tokenBillet',89)->unique();
+            $table->integer('place_idPlace')->foreign('place_idPlace')->references('idPlace')->on('places');
             $table->timestamps();
  */

@@ -19,7 +19,6 @@ class ModelprodFactory extends Factory
             'descriptModel' => $this->faker->text(300),
             'lienModel' => $this->faker->text(18),
             'token_prod'=>$this->faker->password(34,80),
-            'event_idevent_model'=>Evenements::all()->random()->idevent
         ];
     }
 }

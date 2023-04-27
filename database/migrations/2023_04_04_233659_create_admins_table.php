@@ -14,16 +14,15 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id('idadmin');
-            $table->string('nomadmin');
-            $table->string('pseudoadmin');
-            $table->string('pictadmin');
+            $table->id('idadmins');
+            $table->string('nomadmins');
+            $table->string('pseudoadmins');
+            $table->string('pictadmins');
+            $table->string('tokenadmins')->unique();
             $table->Integer('compte_idCompte')->foreign('compte_idCompte')->references('idcompte')->on('comptes');
             $table->timestamps();
         });
     }
-
-    
     /**
      * Reverse the migrations.
      *

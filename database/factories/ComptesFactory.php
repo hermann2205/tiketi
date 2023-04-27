@@ -16,6 +16,7 @@ class ComptesFactory extends Factory
         return [
             'login'=> $this->faker->firstName(),
             'pwd' => $this->faker->password(8,15),
+            'role' => $this->faker->jobTitle(),
             'email'=>$this->faker->freeEmail(),
             'telcompte'=>$this->faker->phoneNumber(),
             'tokencompte'=>$this->faker->password(25,50),
@@ -30,11 +31,12 @@ class ComptesFactory extends Factory
    $table->id('idcompte');
             $table->string('login');
             $table->string('pwd');
+            $table->string('role');
             $table->string('email')->unique();
             $table->string('telcompte');
             $table->string('tokencompte', 128)->unique();
             $table->boolean('is_connected')->default(0);
             $table->boolean('is_valid')->default(0);
-
+            $table->timestamps();
 
 */

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Evenements;
+use App\Models\ModelBillets;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PayementsFactory extends Factory
@@ -16,9 +17,10 @@ class PayementsFactory extends Factory
     {
         return [
             "montantpayement" => $this->faker->numberBetween(1000,99999999),
-            "tokenpayement" => $this->faker->password(45,92),
-            "event_idevent_payement"=>Evenements::all()->random()->idevent,
-            "devise" => $this->faker->firstName()
+            "datepayement" => $this->faker->dateTime(),
+            "modePayement" => $this->faker->jobTitle(),
+            "modelbillet_idModelbillet" => ModelBillets::all()->random()->idModelBillet,
+
         ];
     }
 }
@@ -26,9 +28,11 @@ class PayementsFactory extends Factory
 
 /*
 
- $table->id('idpayement');
+create('payements', function (Blueprint $table) {
+            $table->id('idpayement');
             $table->double('montantpayement');
-            $table->string('tokenpayement');
-            $table->string('devise');
-
+            $table->dateTime('datepayement');
+            $table->string('modePayement');
+            $table->integer('modelbillet_idModelbillet')->foreign('modelbillet_idModelbillet')->references('idModelBillet')->on('id_model_billet');
+            $table->timestamps();
 */

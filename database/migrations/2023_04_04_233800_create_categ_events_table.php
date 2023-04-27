@@ -14,18 +14,14 @@ class CreateCategEventsTable extends Migration
     public function up()
     {
         Schema::create('categ_events', function (Blueprint $table) {
-            $table->id('idcateg_ev');
-            $table->string('nom_categ_ev');
-            $table->text('descript_categ_ev');
-            $table->string('photo_categ_ev');
-            $table->string('theme_categ_ev');
-            $table->string('token_cat',79)->unique();
-            $table->integer('level_categ_ev');
+            $table->id('idCategEvenements');
+            $table->string('nomCategEvenements');
+            $table->text('descCategEvenements');
+            $table->string('pictCategEvenements');
+            $table->string('tokenCategEvenements',79)->unique();
             $table->timestamps();
         });
     }
-
-    
     /**
      * Reverse the migrations.
      *

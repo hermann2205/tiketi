@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Payements extends Model
 {
     use HasFactory;
-    protected $fillable = ['idpayement','montantpayement','tokenpayement','devise','event_idevent_payement'];
+    protected $fillable = ['idpayement','montantpayement','datepayement','modePayement','modelbillet_idModelbillet'];
     protected $hidden = [];
 
-    public function Evenements()
-    {
-        return $this->belongsTo(Evenements::class);
-    }
+   public function ModelBillets()
+   {
+        return $this->belongsTo(ModelBillets::class);
+   }
 
 }
 

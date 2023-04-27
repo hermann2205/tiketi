@@ -16,19 +16,21 @@ class AdminsFactory extends Factory
     {
         return [
 
-            "nomadmin"=>$this->faker->firstName(),
-            "pseudoadmin"=>$this->faker->lastName(),
-            "pictadmin"=> $this->faker->domainName(),
+            "nomadmins"=>$this->faker->firstName(),
+            "pseudoadmins"=>$this->faker->lastName(),
+            "pictadmins"=> $this->faker->domainName(),
+            'tokenadmins' => $this->faker->password(45,76),
             "compte_idCompte" => Comptes::all()->random()->idcompte
         ];
     }
 }
 
 /*
-            $table->id('idadmin');
-            $table->string('nomadmin');
-            $table->string('pseudoadmin');
-            $table->string('pictadmin');
+            $table->id('idadmins');
+            $table->string('nomadmins');
+            $table->string('pseudoadmins');
+            $table->string('pictadmins');
+            $table->string('tokenadmins')->unique();
             $table->Integer('compte_idCompte')->foreign('compte_idCompte')->references('idcompte')->on('comptes');
             $table->timestamps();
  */

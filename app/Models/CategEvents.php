@@ -8,9 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class CategEvents extends Model
 {
     use HasFactory;
-    protected $fillable = ['idcateg_ev','nom_categ_ev','descript_categ_ev','photo_categ_ev','theme_categ_ev','token_cat','level_categ_ev'];
+    protected $fillable = ['idCategEvenements',
+    'nomCategEvenements',
+    'descCategEvenements',
+    'pictCategEvenements',
+    'tokenCategEvenements'];
     protected $hidden = [];
-
 
     public function TypeEvents()
     {

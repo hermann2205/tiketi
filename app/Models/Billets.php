@@ -9,12 +9,21 @@ class Billets extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["idbillet",'nombillet','descriplace','token_billet','model_idModel'];
+    protected $fillable = ["idBillet",'nomBillet','tokenBillet','place_idPlace'];
     protected $hidden = [];
 
     public function Modelprod()
     {
         return $this->belongsTo(Modelprod::class);
+    }
+
+    public function Places()
+    {
+        return $this->belongsTo(Places::class);
+    }
+    public function ModelBillet()
+    {
+        return $this->hasMany(ModelBillets::class);
     }
 }
 

@@ -15,27 +15,26 @@ class OrganisateursFactory extends Factory
     public function definition()
     {
         return [
-            "nom_organis"=>$this->faker->firstName(),
-            'postnom_organis'=>$this->faker->lastName(),
-            'pseudo_organis'=> $this->faker->userName(),
-            'photo_organis' => $this->faker->fileExtension(),
-            'descript_organis' => $this->faker->text(100),
-            'carteid_organis' => $this->faker->numberBetween(11111111111111,99999999999999),
+            "nomOrganisateur"=>$this->faker->firstName(),
+            'postnomOrganisateur'=>$this->faker->lastName(),
+            'pseudoOrganisateur'=> $this->faker->userName(),
+            'pictOrganisateur' => $this->faker->fileExtension(),
+            'descOrganisateur' => $this->faker->text(100),
+            'tokenOrganisateur' => $this->faker->password(64,87),
             'compte_idCompte_organis'=> Comptes::all()->random()->idcompte
         ];
     }
 }
 
 /*
-  $table->id('idorganis');
-            $table->string('nom_organis');
-            $table->string('postnom_organis');
-            $table->string('pseudo_organis');
-            $table->string('photo_organis');
-            $table->text('descript_organis');
-            $table->string('carteid_organis');
+     $table->id('idOrganisateur');
+            $table->string('nomOrganisateur');
+            $table->string('postnomOrganisateur');
+            $table->string('pseudoOrganisateur');
+            $table->string('pictOrganisateur');
+            $table->text('descOrganisateur');
+            $table->string('tokenOrganisateur');
             $table->Integer('compte_idCompte_organis')->foreign('compte_idCompte_organis')->references('idcompte')->on('comptes');
             $table->timestamps();
-
 
 */
