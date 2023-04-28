@@ -12,12 +12,12 @@ class Places extends Model
     'descPlace',
     'is_free',
     'tokenPlace',
-    'categ_idcateg_place'];
+    'categplaceinev_idCategplaceinev'];
     protected $hidden = [];
 
-    public function CategoriePlaces()
+    public function CategoriePlaceInEvenement()
     {
-        return $this->belongsTo(CategoriePlaces::class);
+        return $this->belongsTo(CategoriePlaceInEvenement::class);
     }
     public function Billets()
     {

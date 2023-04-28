@@ -12,15 +12,13 @@ class ModelBillets extends Model
     protected $fillable = ['idModelBillet',
     'nomModelBillet',
     'pictModelBillet',
-    'tokenModel',
-    'billet_idBillet'];
+    'tokenModel'];
     protected $hidden = [];
 
    public function Billets()
    {
-        return $this->belongsTo(ModelBillets::class);
+        return $this->hasMany(ModelBillets::class);
    }
-
    public function Payements()
    {
     return $this->hasMany(Payements::class);

@@ -11,7 +11,9 @@ class CategoriesPlaceInEvenements extends Model
     protected $fillable = ['idCategoriePlaceInEvenements',
     'nbrePersonneCategoriePlace',
     'tokenPlaceInEvenement',
-    'evenement_idEvenement'];
+    'evenement_idEvenement',
+    'CategPlc_idCategPlc'
+];
     protected $hidden = [];
 
 

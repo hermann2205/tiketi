@@ -20,9 +20,11 @@ class CreateEvenementsTable extends Migration
             $table->integer('nbrplaceidEvenement');
             $table->string('tokenidEvenement',94)->unique();
             $table->dateTime("heureDebutEvenement");
+            $table->string("codeEvenement");
             $table->integer('organis_ev')->foreign('organis_ev')->references('idOrganisateur')->on('organisateurs');
             $table->integer('categ_idcateg_ev')->foreign('categ_idcateg_ev')->references('idCategEvenements')->on('categ_events');
             $table->timestamps();
+            
         });
     }
 

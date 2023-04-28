@@ -18,8 +18,8 @@ class CreatePlacesTable extends Migration
             $table->string('descPlace');
             $table->integer('is_free');
             $table->string('tokenPlace');
-            $table->integer('categ_idcateg_place')->foreign('categ_idcateg_place')->references('idCategoriePlaces')->on('categorie_places');
-            $table->timestamps();
+            $table->integer("categplaceinev_idCategplaceinev")->foreign('categplaceinev_idCategplaceinev')->references('idCategoriePlaceInEvenements')->on('categories_place_in_evenements');
+             $table->timestamps();
         });
     }
 

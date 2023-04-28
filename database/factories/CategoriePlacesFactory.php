@@ -19,8 +19,7 @@ class CategoriePlacesFactory extends Factory
             "descCategoriePlaces" => $this->faker->text(50),
             "nomCategoriePlaces" => $this->faker->firstName(),
             "tokenCategoriePlaces" => $this->faker->password(50,90),
-            "categplaceinev_idCategplaceinev" => CategoriesPlaceInEvenements::all()->random()->idCategoriePlaceInEvenements,
-            
+
         ];
 
         /*
@@ -29,8 +28,7 @@ class CategoriePlacesFactory extends Factory
             $table->string('descCategoriePlaces');
             $table->string('nomCategoriePlaces');
             $table->string('tokenCategoriePlaces');
-            $table->integer("categplaceinev_idCategplaceinev")->foreign('categplaceinev_idCategplaceinev')->references('idCategoriePlaceInEvenements')->on('categories_place_in_evenements');
-            $table->timestamps();
+                    $table->timestamps();
 
         */
     }

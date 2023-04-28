@@ -18,7 +18,6 @@ class CreateModelBilletsTable extends Migration
             $table->string("nomModelBillet");
             $table->string("pictModelBillet");
             $table->string("tokenModel")->unique();
-            $table->integer('billet_idBillet')->foreign('billet_idBillet')->references('idBillet')->on('billets');
             $table->timestamps();
         });
     }

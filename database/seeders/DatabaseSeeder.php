@@ -35,11 +35,11 @@ class DatabaseSeeder extends Seeder
         Organisateurs::factory(1)->create();
         CategEvents::factory(5)->create();
         Evenements::factory(10)->create();
-        CategoriesPlaceInEvenements::factory(5)->create();
         CategoriePlaces::factory(6)->create();
+        CategoriesPlaceInEvenements::factory(5)->create();
         Places::factory(10)->create();
-        Billets::factory(15)->create();
         ModelBillets::factory(10)->create();
+        Billets::factory(15)->create();
         Payements::factory(5)->create();
     }
 }

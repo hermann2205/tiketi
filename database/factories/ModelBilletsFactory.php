@@ -19,7 +19,6 @@ class ModelBilletsFactory extends Factory
             "nomModelBillet" => $this->faker->firstName(),
             "pictModelBillet" => $this->faker->lastName(),
             "tokenModel" => $this->faker->password(59,98),
-            'billet_idBillet' => Billets::all()->random()->idBillet,
         ];
 
         /*
@@ -27,7 +26,6 @@ class ModelBilletsFactory extends Factory
             $table->string("nomModelBillet");
             $table->string("pictModelBillet");
             $table->string("tokenModel")->unique();
-            $table->integer('billet_idBillet')->foreign('billet_idBillet')->references('idBillet')->on('billets');
             $table->timestamps();
 
         */

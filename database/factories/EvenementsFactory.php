@@ -24,6 +24,7 @@ class EvenementsFactory extends Factory
             "nbrplaceidEvenement" => $this->faker->numberBetween(1,1000),
             "tokenidEvenement" => $this->faker->password(73,89),
             "heureDebutEvenement" => $this->faker->dateTime(),
+            "codeEvenement" => $this->faker->jobTitle(),
             "organis_ev" =>Organisateurs::all()->random()->idOrganisateur,
             "categ_idcateg_ev" => CategEvents::all()->random()->idCategEvenements,
         ];
@@ -38,6 +39,7 @@ class EvenementsFactory extends Factory
             $table->integer('nbrplaceidEvenement');
             $table->string('tokenidEvenement',94)->unique();
             $table->dateTime("heureDebutEvenement");
+            $table->string("codeEvenement");
             $table->integer('organis_ev')->foreign('organis_ev')->references('idOrganisateur')->on('organisateurs');
             $table->integer('categ_idcateg_ev')->foreign('categ_idcateg_ev')->references('idCategEvenements')->on('categ_events');
 

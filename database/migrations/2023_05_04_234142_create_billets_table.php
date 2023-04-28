@@ -17,9 +17,12 @@ class CreateBilletsTable extends Migration
             $table->id("idBillet");
             $table->string('nomBillet');
             $table->string('tokenBillet',89)->unique();
+            $table->boolean("is_scanned");
             $table->integer('place_idPlace')->foreign('place_idPlace')->references('idPlace')->on('places');
+            $table->integer('modelbilletb_idModelbillet')->foreign('modelbilletb_idModelbillet')->references('idModelBillet')->on('model_billets');
             $table->timestamps();
         });
+        
     }
 
     /**

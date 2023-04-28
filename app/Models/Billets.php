@@ -9,7 +9,7 @@ class Billets extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["idBillet",'nomBillet','tokenBillet','place_idPlace'];
+    protected $fillable = ["idBillet",'nomBillet','tokenBillet','place_idPlace','is_scanned','modelbilletb_idModelbillet'];
     protected $hidden = [];
 
     public function Modelprod()
@@ -23,7 +23,7 @@ class Billets extends Model
     }
     public function ModelBillet()
     {
-        return $this->hasMany(ModelBillets::class);
+        return $this->belongsTo(ModelBillets::class);
     }
 }
 

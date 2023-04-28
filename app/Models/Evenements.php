@@ -13,6 +13,7 @@ class Evenements extends Model
     'descidEvenement',
     'nbrplaceidEvenement',
     'tokenidEvenement',
+    'codeEvenement',
     'heureDebutEvenement',
     'organis_ev',
     'categ_idcateg_ev'];

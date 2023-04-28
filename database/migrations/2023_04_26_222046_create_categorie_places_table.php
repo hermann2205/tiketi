@@ -18,9 +18,9 @@ class CreateCategoriePlacesTable extends Migration
             $table->string('descCategoriePlaces');
             $table->string('nomCategoriePlaces');
             $table->string('tokenCategoriePlaces');
-            $table->integer("categplaceinev_idCategplaceinev")->foreign('categplaceinev_idCategplaceinev')->references('idCategoriePlaceInEvenements')->on('categories_place_in_evenements');
             $table->timestamps();
         });
+        
     }
 
     /**

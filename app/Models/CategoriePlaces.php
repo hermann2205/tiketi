@@ -11,18 +11,12 @@ class CategoriePlaces extends Model
     protected $fillable = ['idCategoriePlaces',
     'descCategoriePlaces',
     'nomCategoriePlaces',
-    'tokenCategoriePlaces',
-    'categplaceinev_idCategplaceinev'];
+    'tokenCategoriePlaces'];
     protected $hidden = [];
 
     public function CategoriesPlaceInEvenements()
     {
-        return $this->belongsTo(CategoriesPlaceInEvenements::class);
-    }
-
-    public function Places()
-    {
-        return $this->hasMany(Places::class);
+        return $this->hasMany(CategoriesPlaceInEvenements::class);
     }
 
 }
