@@ -20,7 +20,9 @@ class CategoriesPlaceInEvenementsFactory extends Factory
             "nbrePersonneCategoriePlace" => $this->faker->numberBetween(200,900),
             "tokenPlaceInEvenement" => $this->faker->password(70,90),
             "evenement_idEvenement" => Evenements::all()->random()->idEvenement,
-            "CategPlc_idCategPlc" => CategoriePlaces::all()->random()->idCategoriePlaces
+            "CategPlc_idCategPlc" => CategoriePlaces::all()->random()->idCategoriePlaces,
+            "priceCategInplace" => $this->faker->random_int(1000,9999),
+            'devise' => $this->faker->jobTitle()
         ];
 
 

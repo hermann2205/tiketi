@@ -18,6 +18,7 @@ class CategEventsFactory extends Factory
                 "descCategEvenements" => $this->faker->text(250),
                 "pictCategEvenements" => $this->faker->fileExtension(),
                 'tokenCategEvenements' => $this->faker->password(35,60),
+                "modecateg"=> $this->faker->streetName();
 
         ];
     }

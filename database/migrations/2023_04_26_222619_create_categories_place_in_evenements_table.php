@@ -19,10 +19,12 @@ class CreateCategoriesPlaceInEvenementsTable extends Migration
             $table->string("tokenPlaceInEvenement")->unique();
             $table->integer('evenement_idEvenement')->foreign('evenement_idEvenement')->references('idEvenement')->on('Evenements');
             $table->integer('CategPlc_idCategPlc')->foreign('CategPlc_idCategPlc')->references('idCategoriePlaces')->on('categorie_places');
+            $table->double("priceCategInplace");
+            $table->string('devise');
             $table->timestamps();
         });
 
-        
+
     }
 
     /**

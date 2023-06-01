@@ -12,7 +12,8 @@ class CategEvents extends Model
     'nomCategEvenements',
     'descCategEvenements',
     'pictCategEvenements',
-    'tokenCategEvenements'];
+    'tokenCategEvenements',
+    'modecateg'];
     protected $hidden = [];
 
     public function TypeEvents()
@@ -21,6 +22,22 @@ class CategEvents extends Model
     }
 
     // autres classes classique
+
+    public function getAllCategEvent()
+    {
+        return CategEvents::get();
+    }
+    public function getAllNbCategEvent()
+    {
+        return CategEvents::where("modecateg","non-payant")->get();
+    }
+    public function getAllBCategEvent()
+    {
+        return CategEvents::where("modecateg","payant")->get();
+    }
+
+
+
 }
 
 

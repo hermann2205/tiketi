@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserAuthRequest;
 use App\Models\Admins;
-use App\Models\Comptes;
 use Illuminate\Http\Request;
 
 class AdminsController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        //code here
         $all_admin = Admins::get();
-        var_dump($all_admin);
+        if ($request->session()->get('users') == null) {
+            return redirect()->to('Auth/login');
+        }
+        return view('admin.accueille_vue');
     }
     public function create_admin(Request $request)
     {
@@ -23,7 +25,6 @@ class AdminsController extends Controller
     }
     public function update_admin(Request $request)
     {
-        // code here
         $tab_item = array("index"=>"value");
         $tab_where = array("index"=>"value");
         Admins::where($tab_where)->update($tab_item);

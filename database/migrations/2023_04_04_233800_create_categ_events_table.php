@@ -19,6 +19,7 @@ class CreateCategEventsTable extends Migration
             $table->text('descCategEvenements');
             $table->string('pictCategEvenements');
             $table->string('tokenCategEvenements',79)->unique();
+            $table->string("modecateg");
             $table->timestamps();
         });
     }

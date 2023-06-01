@@ -12,7 +12,9 @@ class CategoriesPlaceInEvenements extends Model
     'nbrePersonneCategoriePlace',
     'tokenPlaceInEvenement',
     'evenement_idEvenement',
-    'CategPlc_idCategPlc'
+    'CategPlc_idCategPlc',
+    'priceCategInplace',
+    'devise'
 ];
     protected $hidden = [];
 

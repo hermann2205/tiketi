@@ -36,4 +36,10 @@ class Evenements extends Model
 
 
     // autres classes classiques
+
+    public function create_ev($tab)
+    {
+       return Evenements::insertGetId($tab);
+
+    }
 }

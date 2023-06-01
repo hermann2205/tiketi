@@ -8,15 +8,12 @@ use Illuminate\Http\Request;
 
 class ComptesController extends Controller
 {
-    //
     public function index()
     {
-        //code here
+        return view('form_compte');
     }
-
     public function create_compte(Request $request)
     {
-        // code here
         $message = "Echec de création de compte !";
         $compteValidate = $request->validate([
             'file' => 'required|image|size:5012',
@@ -29,7 +26,6 @@ class ComptesController extends Controller
         if($compteValidate){
             $objCompte = new Comptes();
             $objAdmin = new Admins();
-
             if ($request->get('password') == $request->get('passwordConf')) {
                 $objCompte->setAttribute('login',$request->get('login'));
                 $objCompte->setAttribute('password',$request->get('password'));
@@ -48,13 +44,11 @@ class ComptesController extends Controller
             $message = "Echec de création de compte, veuillez remplir correctement tous les champs !";
         }
         return view('authentification')->with('error_message', $message);
-
     }
     public function update_compte(Request $request)
     {
-        // code here
-    }
 
+    }
     public function delete_compte(Request $request)
     {
         //  code here

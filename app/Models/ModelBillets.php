@@ -23,4 +23,9 @@ class ModelBillets extends Model
    {
     return $this->hasMany(Payements::class);
    }
+
+   public function getAllModelBillet()
+   {
+        return ModelBillets::get();
+   }
 }
